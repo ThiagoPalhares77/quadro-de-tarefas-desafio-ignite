@@ -1,0 +1,20 @@
+.header {
+  background: var(--gray-700);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+
+  width: 100%;
+  height: 12.5rem;
+
+  margin: 0;
+  border: 0;
+}
+
+.header img {
+  width: 7.875rem;
+  height: 2.5rem;
+
+  margin-top: 5rem;
+  background: none;
+}

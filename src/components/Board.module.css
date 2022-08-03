@@ -1,0 +1,57 @@
+.header {
+  font-family: inter;
+  font-weight: 700;
+  font-size: 0.875;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  padding: 18.1875rem 22rem 0rem 22rem;
+}
+
+.create {
+  display: flex;
+}
+
+.done {
+  display: flex;
+}
+
+.createColor {
+  color: var(--blue);
+}
+
+.doneColor {
+  color: var(--purple);
+}
+
+.counter {
+  background: var(--gray-400);
+  border-radius: 999px;
+  padding: 2px 8px;
+  gap: 10px;
+  color: var(--gray-200);
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 1.5rem 22rem;
+  padding: 4rem 1.5rem;
+
+  gap: 1rem;
+  font-family: inter;
+  font-weight: 400;
+  color: var(--gray-300);
+}
+
+.firstPhrase {
+  font-weight: 700;
+}
