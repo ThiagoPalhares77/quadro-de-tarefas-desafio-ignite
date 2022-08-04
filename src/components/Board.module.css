@@ -1,3 +1,63 @@
+.test {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  background: none;
+  //margin-top: 173px;
+  //margin-left: 352px;
+  padding: 10.8125rem 22rem 0rem 22rem;
+}
+
+.input {
+  font-family: inter;
+  font-size: 1rem;
+  line-height: 140%;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+
+  background: var(--gray-500);
+  color: var(--gray-300);
+
+  width: 39.85rem;
+  height: 3.375rem;
+
+  flex: none;
+
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.inputButton {
+  font-family: inter;
+  display: flex;
+  flex-direction: row;
+  background: var(--blue-dark);
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--blue-dark);
+
+  padding: 1rem;
+  margin-left: 0.5rem;
+  flex: none;
+
+  width: 5.625rem;
+  height: 3.25rem;
+}
+
+.inputButton:hover {
+  background: var(--blue);
+}
+
+.icon {
+  background: transparent;
+  margin-left: 0.5rem;
+}
+
 .header {
   font-family: inter;
   font-weight: 700;
