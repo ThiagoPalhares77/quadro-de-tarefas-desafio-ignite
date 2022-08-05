@@ -4,11 +4,17 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './Board.module.css';
 import { Tasks } from './Tasks';
 
+interface boardProps {
+  tasks: string[];
+  setTasks: React.Dispatch<React.SetStateAction<string[]>>;
+  newTask: string;
+  setNewTask: React.Dispatch<React.SetStateAction<string>>;
+}
 
-export function Board () {  
-  const [tasks, setTasks] = useState<string[]>([])
+export function Board ({tasks, setTasks, setNewTask, newTask}: boardProps) {  
+ 
 
-  const [newTask, setNewTask] = useState('')
+  const [tasksCounter, setTasksCounter] = useState(0)
 
   function handleCreateNewTask(event: FormEvent ){
     event.preventDefault()
@@ -27,8 +33,17 @@ export function Board () {
       
     })
     setTasks(taskWithoutDeleteOne);
+    setTasksCounter((state)=>{
+      return state - 1;
+    })
   }
 
+
+  function handleTasksSum() {
+    setTasksCounter ((state)=> state + 1)
+  }
+
+  
   return (
     <>
     <form onSubmit={handleCreateNewTask} className={styles.test}>
@@ -40,14 +55,15 @@ export function Board () {
       onChange={handleNewTaskChange}
       required
     />
-    <button className={styles.inputButton} type='submit'>
+ 
+    <button onClick={handleTasksSum} className={styles.inputButton} type='submit'>
       Criar<PlusCircle className={styles.icon} size={16} color="#fafafa" /></button>
     </form>
     <header>
       <div className={styles.header}>
         <div className={styles.create}>
           <div className={styles.createColor}>Tarefas criadas </div>
-          <div className={styles.counter}>0</div>
+          <div className={styles.counter}>{tasksCounter}</div>
         </div>
         <div className={styles.done}>
           <div className={styles.doneColor}>Concluídas </div>
@@ -58,7 +74,7 @@ export function Board () {
     <footer>
       
         
-      
+     
       <div className={styles.board}>
         <ClipboardText className={styles.icon} size={56} />
         <p className={styles.firstPhrase}>Você ainda não tem tarefas cadastradas</p>
@@ -70,10 +86,11 @@ export function Board () {
         {tasks.map(task =>{
           return(
             <Tasks
-              key={task} 
-              content={task} 
-              onDeleteTask={deleteTask}           
+              key={task}
+              content={task}
+              onDeleteTask={deleteTask}     
             />
+            
           )
         })}
         

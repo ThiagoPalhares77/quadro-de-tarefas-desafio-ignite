@@ -8,19 +8,25 @@ interface TaskProps{
 
 export function Tasks ({content, onDeleteTask}: TaskProps) {
   
+ 
+
   function handleDeleteTask(){
-    onDeleteTask(content)
+    onDeleteTask(content);
   }
   
   return (
-  <ul>
+    <ul>
     <li>
       <button> <Circle /></button>
       <a>{content}</a>
-      <button onClick={handleDeleteTask} title="Delete comment"> 
+      <button  onClick={handleDeleteTask} title="Delete comment"> 
       <Trash size={24}/>
       </button>
     </li>
   </ul>
   )
 }
+
+
+
+
