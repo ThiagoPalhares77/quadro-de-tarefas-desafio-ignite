@@ -15,12 +15,12 @@ export function Tasks ({content, onDeleteTask}: TaskProps) {
   }
   
   return (
-    <ul>
-    <li>
-      <button> <Circle /></button>
-      <a>{content}</a>
-      <button  onClick={handleDeleteTask} title="Delete comment"> 
-      <Trash size={24}/>
+    <ul className={styles.list}>
+    <li className={styles.itenList}>
+      <input type="checkbox" className={styles.circle} /> 
+      <label className={styles.font}>{content}</label>
+      <button className={styles.button} onClick={handleDeleteTask} title="Delete comment"> 
+      <Trash className={styles.trash} size={16}/>
       </button>
     </li>
   </ul>
