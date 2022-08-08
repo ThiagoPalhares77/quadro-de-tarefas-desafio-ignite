@@ -1,31 +1,37 @@
-import { Circle, Trash } from "phosphor-react";
+import { Trash } from "phosphor-react";
+import { useState } from "react";
 import styles from "./Tasks.module.css";
 
 interface TaskProps{
   content: string;
   onDeleteTask: (task: string) => void;
+  task: string;
+  tasks: string[];
 }
 
-export function Tasks ({content, onDeleteTask}: TaskProps) {
-  
- 
+export function Tasks ({content, onDeleteTask, task}: TaskProps) {
 
   function handleDeleteTask(){
     onDeleteTask(content);
   }
   
-  return (
-    <ul className={styles.list}>
-    <li className={styles.itenList}>
-      <input type="checkbox" className={styles.circle} /> 
-      <label className={styles.font}>{content}</label>
+  
+    
+      return (
+    
+    <div className={styles.tasksList}>
+      <input id={task} type="checkbox" name={task} /> 
+        <label htmlFor={task}></label>
+        <span className={styles.font}>{content}</span>
+          
       <button className={styles.button} onClick={handleDeleteTask} title="Delete comment"> 
       <Trash className={styles.trash} size={16}/>
       </button>
-    </li>
-  </ul>
-  )
-}
+    </div>
+      )}
+      
+       
+
 
 
 

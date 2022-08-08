@@ -34,8 +34,9 @@ export function Board ({tasks, setTasks, setTasksCounter, tasksCounter}: boardPr
             <Tasks
               key={task}
               content={task}
-              onDeleteTask={deleteTask}     
-            />
+              onDeleteTask={deleteTask} 
+              task={task} 
+              tasks={tasks}          />
             
           )
         })}
