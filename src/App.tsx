@@ -27,11 +27,10 @@ return (
    />
 
   <Board 
-    tasks={tasks}
-    setTasks={setTasks}
-    setTasksCounter={setTasksCounter}
-    tasksCounter={tasksCounter}
-  />
+      tasks={tasks}
+      setTasks={setTasks}
+      setTasksCounter={setTasksCounter}
+      tasksCounter={tasksCounter}   />
   </div>
 )
 }
