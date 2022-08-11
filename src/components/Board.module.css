@@ -21,3 +21,127 @@
 .firstPhrase {
   font-weight: 700;
 }
+
+.tasksList {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  padding: 1rem;
+  gap: 0.75rem;
+  margin: 0.75rem 22rem;
+
+  background: var(--gray-500);
+
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+
+  height: 4.5rem;
+  width: 41rem;
+}
+
+.tasksList input {
+  display: none;
+}
+
+.tasksList {
+  color: var(--gray-300);
+
+  transition: background-color 1s;
+}
+.tasksList input:checked + span {
+  text-decoration: line-through;
+}
+
+.tasksList button:hover {
+  color: var(--danger);
+  border-radius: 4px;
+}
+
+.tasksList .labelCheckbox {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding-right: 1.5rem;
+  background: var(--gray-500);
+  background-image: url(../assets/check.svg);
+}
+
+.tasksList input:checked + .labelCheckbox {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding-right: 1.5rem;
+  background-image: url(../assets/checked.svg);
+
+  repeat: no-repeat;
+}
+
+.tasksList .labelCheckbox:hover {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding-right: 1.5rem;
+  background-image: url(../assets/checkhover.svg);
+
+  repeat: no-repeat;
+}
+
+.tasksList input:checked + label:hover {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding-right: 1.5rem;
+  background-image: url(../assets/checkedhover.svg);
+
+  repeat: no-repeat;
+}
+
+input[type='checkbox']:checked ~ .font {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+input[type='checkbox']:checked ~ .tasksList {
+  border: 1px solid var(--gray-500);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.font {
+  font-family: inter;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+
+  color: var(--gray-100);
+  background: var(--gray-500);
+
+  /* padding: 16px 12px 16px 12px; */
+  width: 30rem;
+  height: 2.5rem;
+}
+
+.button {
+  box-sizing: border-box;
+
+  color: var(--gray-300);
+
+  border: none;
+
+  position: absolute;
+  background: var(--gray-500);
+  margin-left: 37.5rem;
+}
+
+.trash {
+  background: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .tasksList {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
