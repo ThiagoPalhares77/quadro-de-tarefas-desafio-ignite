@@ -7,22 +7,17 @@ interface TaskProps {
   onDeleteTask: (task: string) => void
   task: string
   tasks: string[]
+  counterTasksDone: React.Dispatch<React.SetStateAction<any>>
 }
 
-export function Boardwithtasks({ content, onDeleteTask, task }: TaskProps) {
-  const [tasksDone, setTasksDone] = useState(0)
-
+export function Boardwithtasks({
+  content,
+  onDeleteTask,
+  task,
+  counterTasksDone
+}: TaskProps) {
   function handleDeleteTask() {
     onDeleteTask(content)
-  }
-
-  function counterTasksDone(event: ChangeEvent<HTMLInputElement>) {
-    if (event.target.checked) {
-      setTasksDone(tasksDone + 1)
-    } else {
-      setTasksDone(tasksDone - 1)
-    }
-    console.log(tasksDone)
   }
 
   return (
@@ -33,7 +28,9 @@ export function Boardwithtasks({ content, onDeleteTask, task }: TaskProps) {
         type="checkbox"
         name={task}
       />
+
       <label htmlFor={task}></label>
+
       <span className={styles.font}>{content}</span>
 
       <button

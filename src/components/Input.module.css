@@ -1,4 +1,4 @@
-.test {
+.form {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,8 +20,8 @@
 
   background: var(--gray-500);
   color: var(--gray-300);
-
-  width: 39.85rem;
+  left: calc(50% - 736px / 2);
+  width: 34.9rem;
   height: 3.375rem;
 
   flex: none;
@@ -63,7 +63,7 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  padding: 18.1875rem 22rem 0rem 22rem;
+  padding: 18.1875rem 22rem 0.75rem 22rem;
 }
 
 .create {

@@ -9,13 +9,15 @@ interface boardProps {
   setTasks: React.Dispatch<React.SetStateAction<string[]>>
   setTasksCounter: React.Dispatch<React.SetStateAction<number>>
   tasksCounter: number
+  counterTasksDone: React.Dispatch<React.SetStateAction<any>>
 }
 
 export function Board({
   tasks,
   setTasks,
   setTasksCounter,
-  tasksCounter
+  tasksCounter,
+  counterTasksDone
 }: boardProps) {
   function deleteTask(taskToDelete: string) {
     const taskWithoutDeleteOne = tasks.filter((task) => {
@@ -37,6 +39,7 @@ export function Board({
               onDeleteTask={deleteTask}
               task={task}
               tasks={tasks}
+              counterTasksDone={counterTasksDone}
             />
           )
         })}
