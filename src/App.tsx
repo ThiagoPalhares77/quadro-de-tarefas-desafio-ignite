@@ -7,15 +7,10 @@ import { Board } from './components/Board'
 
 import './global.css'
 
-interface AppProps {
-  handleDeleteTask: React.Dispatch<React.SetStateAction<any>>
-}
-function App({ handleDeleteTask }: AppProps) {
+function App() {
   const [tasks, setTasks] = useState<string[]>([])
 
   const [newTask, setNewTask] = useState('')
-
-  const [tasksCounter, setTasksCounter] = useState(0)
 
   const [tasksDone, setTasksDone] = useState(0)
 
@@ -35,16 +30,12 @@ function App({ handleDeleteTask }: AppProps) {
         setTasks={setTasks}
         newTask={newTask}
         setNewTask={setNewTask}
-        setTasksCounter={setTasksCounter}
-        tasksCounter={tasksCounter}
         tasksDone={tasksDone}
       />
 
       <Board
         tasks={tasks}
         setTasks={setTasks}
-        setTasksCounter={setTasksCounter}
-        tasksCounter={tasksCounter}
         counterTasksDone={counterTasksDone}
       />
     </div>

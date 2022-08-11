@@ -7,28 +7,17 @@ import { Boardwithtasks } from './Boardwithtasks'
 interface boardProps {
   tasks: string[]
   setTasks: React.Dispatch<React.SetStateAction<string[]>>
-  setTasksCounter: React.Dispatch<React.SetStateAction<number>>
-  tasksCounter: number
   counterTasksDone: React.Dispatch<React.SetStateAction<any>>
 }
 
-export function Board({
-  tasks,
-  setTasks,
-  setTasksCounter,
-  tasksCounter,
-  counterTasksDone
-}: boardProps) {
+export function Board({ tasks, setTasks, counterTasksDone }: boardProps) {
   function deleteTask(taskToDelete: string) {
     const taskWithoutDeleteOne = tasks.filter((task) => {
       return task !== taskToDelete
     })
     setTasks(taskWithoutDeleteOne)
-    setTasksCounter((state) => {
-      return state - 1
-    })
   }
-  if (tasksCounter != 0) {
+  if (tasks.length != 0) {
     return (
       <>
         {tasks.map((task) => {

@@ -3,28 +3,20 @@ import { ChangeEvent, FormEvent } from 'react'
 import styles from './Input.module.css'
 
 interface inputProps {
-  setTasksCounter: React.Dispatch<React.SetStateAction<number>>
   tasks: string[]
   setTasks: React.Dispatch<React.SetStateAction<string[]>>
   newTask: string
   setNewTask: React.Dispatch<React.SetStateAction<string>>
-  tasksCounter: number
   tasksDone: number
 }
 
 export function Input({
-  setTasksCounter,
   setNewTask,
   setTasks,
   tasks,
   newTask,
-  tasksCounter,
   tasksDone
 }: inputProps) {
-  function handleTasksSum() {
-    setTasksCounter((state) => state + 1)
-  }
-
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
 
@@ -47,11 +39,7 @@ export function Input({
           required
         />
 
-        <button
-          onClick={handleTasksSum}
-          className={styles.inputButton}
-          type="submit"
-        >
+        <button className={styles.inputButton} type="submit">
           Criar
           <PlusCircle className={styles.icon} size={16} color="#fafafa" />
         </button>
@@ -60,12 +48,12 @@ export function Input({
         <div className={styles.header}>
           <div className={styles.create}>
             <div className={styles.createColor}>Tarefas criadas </div>
-            <div className={styles.counter}>{tasksCounter}</div>
+            <div className={styles.counter}>{tasks.length}</div>
           </div>
           <div className={styles.done}>
             <div className={styles.doneColor}>Concluídas </div>
             <div className={styles.counter}>
-              {tasksCounter} de {tasksDone}
+              {tasks.length} de {tasksDone}
             </div>
           </div>
         </div>
