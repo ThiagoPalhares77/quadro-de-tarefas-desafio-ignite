@@ -1,1 +1,1 @@
-# quadro-de-tarefas-desafio-ignite
+# Quadro de tarefas desenvolvido com as tecnologias React e TypeScript, feito por um desafio do programa Ignite da Rocketseat. Link do projeto em tela: 'https://quadro-de-tarefas-desafio-ignite-d9dwj7zg5-thiagopalhares77.vercel.app/'
